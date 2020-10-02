@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="script.js"></script> -->
+    <title>Document</title>
+</head>
+<body>
+   <div>list : </div>
+   
+   <script>
+         let arr = ["hello", "world", "Kiev", "Kharkiv", "Odessa", "Lviv"];
+    let div = document.querySelector('div');
+    console.log(div);
+   
+    function makeList(arr, div){
+        let newArr = arr.map(item  =>`<li>${item}</li>`);
+        let arrList = newArr.join("");
+        console.log(arrList);
+        div.insertAdjacentHTML('beforeend', arrList);
+    }
+    console.log(makeList(arr, div));
+   </script>
+</body>
+</html>   
+   
+   
+   
+
+<!-- <div id="text">text</div> -->
+<!-- <button>Sweeties(click me)!<span>▼</span><span class = "up">▲</span></button>
+<ul>
+    <Li>Cake</Li>
+    <Li>Donat</Li>
+    <Li>Candy</Li>
+</ul>
+
+
+
+<script> 
+    let ul = document.querySelector("ul");   
+    ul.hidden = true;
+    let btnUp = document.querySelector("button > .up");
+    btnUp.hidden = true;
+    btnUp.addEventListener("click",up); -->
+    <!-- // let btn = document.querySelector("button > span");
+    // btn.addEventListener("click",del);
+    
+    // function del(){
+    //     ul.hidden = false;
+    //     btn.hidden = true;
+    //     btnUp.hidden = false;
+    // }
+    // function up(){
+    //     ul.hidden = true;
+    //     btn.hidden = false;
+    //     btnUp.hidden = true;
+    // }
+   
+  
+</body>
+</html> 

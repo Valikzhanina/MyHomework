@@ -1,63 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="script.js"></script> -->
-    <title>Document</title>
-</head>
-<body>
-   <div>list : </div>
-   
-   <script>
-         let arr = ["hello", "world", "Kiev", "Kharkiv", "Odessa", "Lviv"];
-    let div = document.querySelector('div');
-    console.log(div);
-   
-    function makeList(arr, div){
-        let newArr = arr.map(item  =>`<li>${item}</li>`);
-        let arrList = newArr.join("");
-        console.log(arrList);
-        div.insertAdjacentHTML('beforeend', arrList);
-    }
-    console.log(makeList(arr, div));
-   </script>
-</body>
-</html>   
-   
-   
-   
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HW-8</title>
+		<style>
+			.container {
+				background-color: blueviolet;
+				box-sizing: border-box;
+				width: 150px;
+				border: 2px solid black;
+				padding: 10px;
+			}
 
-<!-- <div id="text">text</div> -->
-<!-- <button>Sweeties(click me)!<span>▼</span><span class = "up">▲</span></button>
-<ul>
-    <Li>Cake</Li>
-    <Li>Donat</Li>
-    <Li>Candy</Li>
-</ul>
+			.price {
+				display: inline;
+			}
 
+			.input {
+				border: 2px solid black;
+				box-sizing: border-box;
+				width: 50%;
+			}
+			.onfocus {
+				border: 5px solid green;
+				box-sizing: border-box;
+				width: 50%;
+			}
+			.red {
+				border: 5px solid red;
+				box-sizing: border-box;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<span class="price">Цена, $</span>
+			<input type="text" class="input" />
+		</div>
 
+		<script>
+			let container = document.querySelector('.container');
+			let input = document.querySelector('.input ');
+			input.onfocus = function () {
+				this.className = 'onfocus';
+				// input.style.border = '5px solid green';
+			};
+			input.onblur = function () {
+				this.className = 'input';
+				let res = this.value;
+				this.style.color = 'green';
+				// console.log(res);
+				let newSpan = document.createElement('span');
+				newSpan.textContent = `Текущая цена: ${res}`;
+				container.insertAdjacentElement('beforebegin', newSpan);
+				let button = document.createElement('button');
+				button.textContent = ' x';
+				button.style.color = 'red';
+				newSpan.insertAdjacentElement('afterend', button);
+				button.style.borderRadius = '25px';
 
-<script> 
-    let ul = document.querySelector("ul");   
-    ul.hidden = true;
-    let btnUp = document.querySelector("button > .up");
-    btnUp.hidden = true;
-    btnUp.addEventListener("click",up); -->
-    <!-- // let btn = document.querySelector("button > span");
-    // btn.addEventListener("click",del);
-    
-    // function del(){
-    //     ul.hidden = false;
-    //     btn.hidden = true;
-    //     btnUp.hidden = false;
-    // }
-    // function up(){
-    //     ul.hidden = true;
-    //     btn.hidden = false;
-    //     btnUp.hidden = true;
-    // }
-   
-  
-</body>
-</html> 
+				button.onclick = function () {
+					newSpan.remove();
+					button.remove();
+					input.value = '';
+					input.style.color = 'black';
+				};
+				let str = 'Please enter correct price';
+				if (input.value < 0) {
+					input.classList.add('red');
+					input.classList.remove('onfocus');
+
+					container.insertAdjacentText('afterend', str);
+				}
+			};
+		</script>
+	</body>
+</html>

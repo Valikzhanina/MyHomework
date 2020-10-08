@@ -74,20 +74,17 @@
 				hid2 ? (input2.type = 'text') : (input2.type = 'password');
 			});
 			let btn = document.querySelector('button');
+			let span = document.createElement('span');
 			btn.addEventListener('click', function () {
 				if (input1.value === input2.value) {
 					alert('You are welcome');
 				} else {
-					let span = document.createElement('span');
 					span.textContent = 'Нужно ввести одинаковые значения';
 					span.style.color = 'red';
-
 					input2.insertAdjacentElement('afterend', span);
-
 					input1.onclick = function () {
 						span.textContent = '';
 					};
-					// input2.onclick = () => (input2.value = '');
 				}
 			});
 		</script>

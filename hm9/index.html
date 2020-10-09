@@ -46,15 +46,15 @@
 	<body>
 		<div class="centered-content">
 			<ul class="tabs">
-				<li class="tabs-title active">Akali</li>
-				<li class="tabs-title">Anivia</li>
-				<li class="tabs-title">Draven</li>
-				<li class="tabs-title">Garen</li>
-				<li class="tabs-title">Katarina</li>
+				<li data-name="Akali" class="tabs-title active">Akali</li>
+				<li data-name="Anivia" class="tabs-title">Anivia</li>
+				<li data-name="Draven" class="tabs-title">Draven</li>
+				<li data-name="Garen" class="tabs-title">Garen</li>
+				<li data-name="Katarina" class="tabs-title">Katarina</li>
 			</ul>
 			<ul class="tabs-content">
 				<!-- Akali -->
-				<li class="visible">
+				<li data-content="Akali" class="visible">
 					Abandoning the Kinkou Order and her title of the Fist of Shadow, Akali
 					now strikes alone, ready to be the deadly weapon her people need.
 					Though she holds onto all she learned from her master Shen, she has
@@ -63,7 +63,7 @@
 					fear the assassin with no maste
 				</li>
 				<!-- Anivia -->
-				<li>
+				<li data-content="Anivia">
 					Anivia is a benevolent winged spirit who endures endless cycles of
 					life, death, and rebirth to protect the Freljord. A demigod born of
 					unforgiving ice and bitter winds, she wields those elemental powers to
@@ -74,7 +74,7 @@
 					will be reborn into a new tomorrow.
 				</li>
 				<!--Draven -->
-				<li>
+				<li data-content="Draven">
 					In Noxus, warriors known as reckoners face one another in arenas where
 					blood is spilled and strength tested—but none has ever been as
 					celebrated as Draven. A former soldier, he found that the crowds
@@ -85,7 +85,7 @@
 					empire forever more.
 				</li>
 				<!-- Garen -->
-				<li>
+				<li data-content="Garen">
 					A proud and noble soldier, Garen fights at the head of the Dauntless
 					Vanguard. He is popular among his fellows, and respected well enough
 					by his enemies—not least as a scion of the prestigious Crownguard
@@ -95,7 +95,7 @@
 					veritable whirlwind of righteous steel.
 				</li>
 				<!-- Katarina -->
-				<li>
+				<li data-content="Katarina">
 					Decisive in judgment and lethal in combat, Katarina is a Noxian
 					assassin of the highest caliber. Eldest daughter to the legendary
 					General Du Couteau, she made her talents known with swift kills
@@ -107,43 +107,25 @@
 			</ul>
 		</div>
 		<script>
-			let tabs = document.querySelector('.tabs');
-			let defaultLi = tabs.firstElementChild;
-			let selectedLi;
-			let visibleLi;
+			const tabsTitle = document.querySelectorAll('.tabs-title');
+			const tabsContent = document.querySelectorAll('.tabs-content > li');
 
-			tabs.onclick = function (event) {
-				let target = event.target;
-				defaultLi.classList.remove('active');
-				selected(target);
-			};
-			function selected(li) {
-				if (selectedLi) {
-					selectedLi.classList.remove('active');
-				}
-				selectedLi = li;
-				selectedLi.classList.add('active');
-			}
+			tabsTitle.forEach(item => {
+				item.addEventListener('click', function (event) {
+					tabsTitle.forEach(currentItem => {
+						currentItem.classList.remove('active');
+					});
 
-			let tabsContent = document.querySelectorAll('.tabs-content > li');
-			let tabsTitle = document.querySelectorAll('.tabs > li');
-			let obj1 = {};
-			for (let i = 0; i < tabsTitle.length; i++) {
-				obj1[i] = tabsTitle[i];
-
-				obj1[i].onclick = function (e) {
-					obj2[i].classList.add('visible');
-					// visibleLi = li;
-					// visibleLi.classList.remove('visible');
-				};
-			}
-
-			let obj2 = {};
-			for (let i = 0; i < tabsContent.length; i++) {
-				obj2[i] = tabsContent[i];
-			}
-
-			console.log(obj1, obj2);
+					event.target.classList.add('active');
+					tabsContent.forEach(function (element) {
+						if (event.target.dataset.name === element.dataset.content) {
+							element.classList.add('visible');
+						} else {
+							element.classList.remove('visible');
+						}
+					});
+				});
+			});
 		</script>
 	</body>
 </html>

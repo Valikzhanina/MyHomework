@@ -51,12 +51,8 @@
 
 		document.addEventListener('keydown', function (event) {
 			btnsItems.forEach(function (element) {
-				// console.log(element.textContent);
-				console.log(event.key);
 				if (event.key.toLowerCase() === element.textContent.toLowerCase()) {
 					select(element);
-
-					console.log(event.code);
 				}
 			});
 		});

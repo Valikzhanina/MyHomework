@@ -51,9 +51,7 @@
 			const stopSlide = document.querySelector('.stop');
 			const continueSlide = document.querySelector('.continue');
 
-			stopSlide.addEventListener('click', function (e) {
-				clearTimeout(timer);
-			});
+			stopSlide.addEventListener('click', () => clearTimeout(timer));
 			continueSlide.addEventListener('click', () => autoslider());
 
 			autoslider();

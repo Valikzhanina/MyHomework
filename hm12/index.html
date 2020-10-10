@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Banners</title>
+		<style>
+			.image-to-show {
+				width: 400px;
+				height: 400px;
+			}
+
+			.images-wrapper {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+
+			.hidden {
+				display: none;
+			}
+			button {
+				background-color: aquamarine;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="images-wrapper">
+			<img src="./img/1.png" alt="image of game" class="image-to-show" />
+			<img src="./img/2.jpg" alt="image of game" class="image-to-show hidden" />
+			<img src="./img/3.jpg" alt="image of game" class="image-to-show hidden" />
+			<img src="./img/4.JPG" alt="image of game" class="image-to-show hidden" />
+		</div>
+		<div class="btns">
+			<button class="stop">Прекратить</button>
+			<button class="continue">Возобновить показ</button>
+		</div>
+		<script>
+			//1. Разница заключается в том, что setTimeout позволяет вызвать функцию только
+			// 1 раз, а setInterval повторяет вызов функции через определенный интервал.
+
+			//2.Функция setTimeout с нулевой задержкой произойдет сразу же после
+			//выполнения текущего кода, так как вызов этой функции будет запланирован сразу
+			// после выполнения текущего кода,с минимальной задержкой в 0 секунд.hidden
+
+			//3.С помощью функции clearInterval() можно отменить дальнейшее выполнение .
+
+			const imgList = document.querySelectorAll('img');
+			let timer;
+			const stopSlide = document.querySelector('.stop');
+			const continueSlide = document.querySelector('.continue');
+
+			stopSlide.addEventListener('click', function (e) {
+				clearTimeout(timer);
+			});
+			continueSlide.addEventListener('click', () => autoslider());
+
+			autoslider();
+
+			let active = 0;
+
+			function autoslider() {
+				timer = setTimeout(function () {
+					imgList[active].classList.toggle('hidden');
+					if (active === imgList.length - 1) {
+						active = 0;
+					} else {
+						active++;
+					}
+					imgList[active].classList.toggle('hidden');
+
+					autoslider();
+				}, 3000);
+			}
+		</script>
+	</body>
+</html>

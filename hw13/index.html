@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- <link rel="stylesheet" href="css/reset.css" /> -->
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+
+		<title>Journey</title>
+	</head>
+	<body class="content-img">
+		<div class="header">
+			<div class="container clearfix">
+				<a href="#" class="header-logo"
+					><h1 class="header-logo-text">Journey</h1></a
+				>
+				<button class="changeBtn">Сменить тему</button>
+
+				<div class="header-right-col">
+					<div class="icon-list">
+						<a href="#" class="icon icon-calendar"></a>
+						<a href="#" class="icon icon-forum"></a>
+						<a href="#" class="icon icon-journey"></a>
+					</div>
+					<div class="header-menu-links">
+						<p>
+							Welcome, <a class="header-menu-items-colored"> Log In</a> or
+							<a class="header-menu-items-colored"> Sign Up</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-content">
+			<div class="register">
+				<div class="form-information clearfix">
+					<p class="sign-up">Sign up</p>
+					<a class="login" href="#">Log in</a>
+				</div>
+				<div class="clearfix">
+					<button class="loginBtn fab fa-facebook-f loginBtn--facebook">
+						Facebook
+					</button>
+					<button class="loginBtn fab fa-google-plus-g loginBtn--google">
+						Google
+					</button>
+				</div>
+				<p class="or">or</p>
+
+				<form class="registration-form">
+					<input
+						class="input-class"
+						type="text"
+						name="namePerson"
+						placeholder="Jason"
+						autofocus
+						required
+					/>
+					<input
+						class="input-class"
+						type="text"
+						name="lastName"
+						maxlength="16"
+						placeholder="Last Name"
+						required
+					/>
+					<input
+						class="input-class"
+						type="email"
+						name="email"
+						placeholder="Email"
+						required
+					/>
+					<input
+						class="input-class"
+						type="password"
+						name="pass"
+						placeholder="Choose Password"
+						required
+					/>
+					<input
+						class="input-class"
+						type="password"
+						name="pass"
+						placeholder="Confirm Password"
+						required
+					/>
+					<div class="check">
+						<label>
+							<input type="checkbox" />
+							<span class="new-checkbox"
+								>Agree our
+								<a class="agree" href="#">Terms & Conditions</a></span
+							>
+						</label>
+					</div>
+					<input
+						class="input-class create-account"
+						type="submit"
+						value="Create Account"
+					/>
+				</form>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+.header-logo-text:hover {
+	color: rgb(231, 152, 229);
+}
+
+.content-img {
+	background-image: url('../img/ocean.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+	background-color: rgb(231, 152, 229);
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+	background: rgb(231, 152, 229);
+}
+.create-account:hover {
+	background-color: rgb(231, 152, 229);
+}

@@ -1,0 +1,310 @@
+/*CONTAINER*/
+.container{
+    font-family: ﻿AdobeInvisFont, ﻿Courier, ﻿OpenSans-Semibold,sans-serif;
+    width: 1170px;
+    margin: 0 auto;
+}
+/*HEAD*/
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d2124;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+}
+.header-logo-img{
+    padding: 25px;
+    background-color: #1a1d20;
+}
+.header-logo-link{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22pt;
+    margin-left: 6px;
+}
+.header-menu{
+    display: inline-block;
+}
+.header-menu-link{
+    text-decoration: none;
+    font-size: 15pt;
+    color: #ffffff;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    margin-left: 37px;
+}
+.header-menu-item{
+    display: inline-block;
+}
+.header-btn{
+    padding: 25px 25px;
+    box-sizing: border-box;
+    background-color: #171a1c;
+    justify-content: flex-end;
+    border: solid 1px #171a1c;
+}
+.fa-search{
+    font-size: 17px;
+    color: #ffffff;
+}
+/*HEADER TITLE*/
+.header-title-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 400px;
+    background-image: url("../img/header/header-bg.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-buttonset{
+    text-align: center;
+}
+.header-title{
+    font-size: 27px;
+    margin-bottom: 44px;
+    color: #ffffff;
+}
+.header-title-btn{
+    font-size: 18px;
+    width: 170px;
+    border-radius: 7px;
+    color: #ffffff;
+    border: solid 1px transparent;
+    margin: 0 auto;
+}
+.header-title-btn-subscribe{
+    padding: 20px;
+    background-color: #89ca62;
+    margin-right: 20px;
+}
+.header-title-btn-articles{
+    padding: 20px 32px;
+    background-color: #14b9d5;
+}
+/*MAIN MENU*/
+.main-menu{
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}
+.main-menu-title{
+    display: flex;
+    justify-content: center;
+    color: #18b4cf;
+    font-size: 27px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 43px 0;
+}
+.main-menu-posts{
+    height: 920px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.main-menu-posts-link{
+    text-decoration: none;
+    color: rgba(53, 58, 61, 255);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30px;
+    border: solid 1px #ffffff;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.main-menu-posts-link:nth-child(-n+2){
+    margin-left: 0;
+}
+.main-menu-posts-link-name{
+   margin-top: 25px;
+    font-weight: bold;
+}
+/*CUSTOMER MENU*/
+.client-menu{
+    background-image: url("../img/parallax-bg.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 200px 0;
+}
+.client-list-title{
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 60px;
+}
+.client-list-title::after{
+    content: "";
+    position: absolute;
+    display: block;
+    left: 46%;
+    border-bottom: solid 3px #169cb4;
+    margin-top: 40px;
+    width: 60px;
+}
+.client-list{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    width: 880px;
+    justify-self: center;
+}
+/*TOP RATED*/
+.top-img-item{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    height: 190px;
+}
+.top-rated-img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+/*HOT NEWS*/
+.news-block{
+    padding-bottom: 70px;
+}
+.news-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:(259px, 416px, 416px, 259px);
+    grid-template-areas:
+            "first first first second "
+            "third third fourth fourth"
+            "fifth fifth sixth sixth"
+            "seventh eighth eighth eighth"
+;
+    grid-row-gap: 42px;
+}
+.news-item{
+    position: relative;
+}
+.first{
+    grid-area: first;
+}
+.second{
+    grid-area: second;
+    padding-left: 18px;
+}
+.third{
+    grid-area: third;
+    padding-right: 31px;
+}
+.fourth{
+    grid-area: fourth;
+    padding-left: 31px;
+}
+.fifth{
+    grid-area: fifth;
+    padding-right: 31px;
+}
+.sixth{
+    grid-area: sixth;
+    padding-left: 31px;
+}
+.seventh{
+    grid-area: seventh;
+    padding-right: 18px;
+}
+.eighth{
+    grid-area: eighth;
+    padding-left: 18px;
+}
+.news-content{
+    background-color: #f9f7f7;
+    font-family: ﻿AdobeInvisFont, ﻿Courier, ﻿OpenSans-Bold,sans-serif;
+    font-size: 14px;
+    color: rgba(53, 58, 61, 255);
+    text-align: center;
+}
+.news-heading{
+    box-sizing: border-box;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.news-link{
+    display: grid;
+    text-decoration: none;
+    color: #5b6469;
+}
+.news-link-middle{
+    grid-template-columns: 483px 374px;
+}
+.news-link-small{
+    grid-template-rows: 210px 48px;
+}
+.news-link-big{
+    grid-template-rows: 259px 159px;
+}
+
+.news-link-middle .news-heading{
+    padding-top: 40px;
+    text-align: center;
+}
+.news-link-small .news-heading{
+    padding-top: 15px;
+}
+.news-link-big .news-heading{
+    padding-top: 20px;
+    padding-right: 27px;
+    text-align: right;
+}
+.news-link-big .news-text{
+    padding-right: 27px;
+    padding-left: 22px;
+    text-align: right;
+}
+.news-text{
+    line-height: 1.5;
+    padding: 0 12px;
+}
+/*FOOTER*/
+.footer{
+    background-color: #1d2124;
+}
+.footer-information{
+    display: grid;
+    grid-template-columns: 1068px 102px;
+}
+.footer-info-rights{
+    color: white;
+    font-size: 13px;
+    padding: 33px 0;
+}
+.footer-logo-link{
+    text-decoration: none;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 38px 64px;
+   margin-right: 0;
+}
+.footer-logo-link-img{
+    padding: 27px 0;
+}
+.footer-logo-link-img-name{
+    padding-top:29px;
+}

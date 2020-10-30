@@ -369,6 +369,8 @@ hr {
 	display: none;
 }
 .icon-hover {
+	display: flex;
+	align-items: center;
 	width: 83px;
 	height: 40px;
 }
@@ -388,7 +390,7 @@ hr {
 }
 .icons {
 	display: inline-block;
-	margin-left: 110px;
+	margin-left: 100px;
 	margin-bottom: 25px;
 }
 .fa-link {

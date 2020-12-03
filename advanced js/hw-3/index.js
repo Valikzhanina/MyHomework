@@ -37,4 +37,6 @@ class Programmer extends Employee {
 const pro = new Programmer('Anna', 29, 1500, 'ukr');
 console.log(pro);
 console.log(pro.salary);
-console.log(pro.name);
+pro.name = 'Rf';
+pro.age = 25;
+console.log(pro);

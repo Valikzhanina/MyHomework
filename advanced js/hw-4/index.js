@@ -1,8 +1,9 @@
+//AJAX дает возможность обновления данных браузера без
+// перезагрузки страницы, что уменьшает время ожидания подгрузки данных.
+
 const ulList = document.querySelector('ul');
 const url = 'https://swapi.dev/api/films/';
 const response = fetch(url);
-const animation = document.querySelector('.loader-2');
-// console.log(animation);
 
 response
   .then((resolve) => resolve.json())
@@ -30,7 +31,7 @@ response
           .then((peopleText) => {
             const peopleLi = document.createElement('li');
             peopleLi.innerText = peopleText.name;
-            ulList.appendChild(peopleLi);
+            discription.appendChild(peopleLi);
           });
       });
     }

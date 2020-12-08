@@ -4,70 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced js hw-4</title>
-    <style>
-      body {
-        background-color: rgb(47, 120, 145);
-      }
-      .loader-2 {
-        width: 10px;
-        height: 10px;
-        position: absolute;
-        top: 50%;
-        border-radius: 50%;
-        position: relative;
-        -webkit-animation: loader-2 0.9s 0.35s ease alternate infinite;
-        animation: loader-2 0.9s 0.35s ease alternate infinite;
-        margin: -20px auto 0;
-      }
-
-      .loader-2:after,
-      .loader-2:before {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        animation: loader-2 0.9s ease alternate infinite;
-        -webkit-animation: loader-2 0.9s ease alternate infinite;
-      }
-
-      .loader-2:before {
-        left: -20px;
-        animation-delay: 0.2s;
-      }
-
-      .loader-2:after {
-        right: -20px;
-        animation-delay: 0.5s;
-      }
-
-      @keyframes loader-2 {
-        0% {
-          box-shadow: 0 15px 0 -15px #ffffff;
-        }
-        100% {
-          box-shadow: 0 15px 0 #ffffff;
-        }
-      }
-
-      @-webkit-keyframes loader-2 {
-        0% {
-          box-shadow: 0 15px 0 -15px #ffffff;
-        }
-        100% {
-          box-shadow: 0 15px 0 #ffffff;
-        }
-      }
-      .none {
-        display: none;
-      }
-    </style>
   </head>
   <body>
     <ul class="list"></ul>
-    <div class="loader-container">
-      <div class="loader-2"></div>
-    </div>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
